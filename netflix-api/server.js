@@ -31,4 +31,4 @@ mongoose.connect("mongodb+srv://princebhandari:princebhandari@cluster0.agdo9ep.m
 
 
 app.use("/api/user", userRoutes);
-app.listen(8000, console.log("server started ",port));
+app.listen(8000, console.log("server started "));
