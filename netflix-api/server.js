@@ -6,15 +6,15 @@ const path = require("path");
 
 const app = express();
 
-const port = process.env.PORT || 5000;
+//const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
 
- // app.use(express.static(path.join(__dirname, "../netflix-ui/build")));
- // app.get("*", function (req, res) {
- //   res.sendFile(path.join(__dirname, "../netflix-ui/build/index.html"));
- // });
+ app.use(express.static(path.join(__dirname, "../netflix-ui/build")));
+ app.get("*", function (req, res) {
+   res.sendFile(path.join(__dirname, "../netflix-ui/build/index.html"));
+ });
 
 //mongoose.connect("mongodb://127.0.0.1:27017/netflix",{
 mongoose.connect("mongodb+srv://princebhandari:princebhandari@cluster0.agdo9ep.mongodb.net/netflix?retryWrites=true&w=majority",{
@@ -31,4 +31,4 @@ mongoose.connect("mongodb+srv://princebhandari:princebhandari@cluster0.agdo9ep.m
 
 
 app.use("/api/user", userRoutes);
-app.listen(port, console.log("server started ",port));
+app.listen(5000, console.log("server started ",port));
