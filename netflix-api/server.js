@@ -16,8 +16,8 @@ app.use(express.json());
    res.sendFile(path.join(__dirname, "../netflix-ui/build/index.html"));
  });
 
-mongoose.connect("mongodb://127.0.0.1:27017/netflix",{
-//mongoose.connect("mongodb+srv://princebhandari:princebhandari@cluster0.agdo9ep.mongodb.net/netflix?retryWrites=true&w=majority",{
+//mongoose.connect("mongodb://127.0.0.1:27017/netflix",{
+mongoose.connect("mongodb+srv://princebhandari:princebhandari@cluster0.agdo9ep.mongodb.net/netflix?retryWrites=true&w=majority",{
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }
@@ -31,4 +31,4 @@ mongoose.connect("mongodb://127.0.0.1:27017/netflix",{
 
 
 app.use("/api/user", userRoutes);
-app.listen(5000, console.log("server started ",port));
+app.listen(10000, console.log("server started ",port));
