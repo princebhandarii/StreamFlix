@@ -76,7 +76,7 @@ import axios from "axios";
         netflix: { genres },
       } = thunkAPI.getState();
       return getRawData(
-        `https://api.themoviedb.org/3/discover/${type}?api_key=c18f369059d2a7dab1111cd3005d662f&with_genres=${genre}`,
+        `https://api.themoviedb.org/3/discover/${type}?api_key=56afeca6d5806e83401644b057c84b46&with_genres=${genre}`,
         //`${TMDB_BASE_URL}/discover/${type}?api_key=${API_KEY}&with_genres=${genre}`,
         genres
       );
@@ -157,4 +157,5 @@ import axios from "axios";
     reducer: {
       netflix: NetflixSlice.reducer,
     },
+
   });
